@@ -1,0 +1,171 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #242121;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+
+fieldset {
+  border: none;
+}
+
+.title {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.center {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.message {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 3px 3px #000;
+}
+
+.message.-success {
+  background-color: #009944;
+}
+
+.message.-error {
+  background-color: #cf000f;
+}
+
+.btn {
+  display: inline-block;
+  padding: .5em;
+  font-size: 1rem;
+  color: #201e1e;
+  background-color: #50abb9;
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.btn:hover {
+  color: black;
+  background: #9cd8e1;
+}
+
+.btn.-full {
+  text-align: center;
+  width: 100%;
+}
+
+.btn-icon {
+  display: inline-block;
+  padding: .5em;
+  font-size: .8rem;
+  color: #201e1e;
+  background-color: #50abb9;
+  cursor: pointer;
+  border: 1px solid #1f1d1d;
+  transition: 250ms;
+}
+
+.btn-icon:hover {
+  color: black;
+  background: #9cd8e1;
+}
+
+.btn-icon.-del {
+  padding-left: .625em;
+  padding-right: .625em;
+  color: #f3e7e7;
+  background-color: #ac0707;
+}
+
+.btn-icon.-del:hover {
+  color: #fff;
+  background-color: #ff0000;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.books {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+
+.book {
+  position: relative;
+  width: 198px;
+}
+
+.book + .book,
+.book:first-child {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.book .btn {
+  margin-top: 10px;
+}
+
+.book-icons {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.book-icons > .btn-icon + .btn-icon {
+  margin-left: 5px;
+}
+
+.book-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  margin-bottom: .3em;
+}
+
+.book-description {
+  font-size: .8rem;
+  margin-bottom: .5em;
+}
+
+.book-price {
+  text-decoration: underline;
+}

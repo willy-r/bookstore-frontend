@@ -1,0 +1,92 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  margin: 15% auto;
+  width: 60%;
+  padding: 25px 15px;
+  background-color: #fefefe;
+  border: 1px solid #888;
+}
+
+.close {
+  float: right;
+  font-weight: bold;
+}
+
+.form-message {
+  display: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-message.-error {
+  color: #cf000f;
+}
+
+.form-message.-success {
+  color: #009944;
+}
+
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.modal-form > fieldset {
+  width: 100%;
+}
+
+.modal-form > fieldset + fieldset {
+  margin-top: 10px;
+}
+
+.modal-form-input {
+  width: 100%;
+  padding: .5em .7em;
+  font-size: .9rem;
+  border: 1px solid #f3e7e7;
+  transition: 250ms;
+}
+
+.modal-form-input:focus {
+  border-color: #50abb9;
+}
+
+.modal-form > .btn {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}

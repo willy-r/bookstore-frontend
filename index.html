@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    
+    <title>Livraria Virtual | Exemplo CRUD</title>
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/modal.css">
+
+    <!-- Font Awesome 5 -->
+    <script src="https://kit.fontawesome.com/190e245c5e.js" crossorigin="anonymous"></script>
+
+    <script src="js/BookAPI.js"></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <!-- Modal. -->
+    <div class="modal" id="modal">
+      <!-- Modal content. -->
+      <div class="modal-content">
+        <button class="btn-icon close" id="close-modal" title="Fechar modal">
+          <span class="fas fa-times"></span>
+        </button>
+
+        <p class="form-message" id="form-message"></p>
+        
+        <div class="form-center">
+          <form class="modal-form" id="modal-form-edit">
+            <fieldset>
+              <label class="visually-hidden" for="ISBN">ISBN:</label>
+              <input class="modal-form-input" id="ISBN" type="text" name="ISBN" maxlength="13" placeholder="ISBN">
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="title">Título:</label>
+              <input class="modal-form-input" id="title" type="text" name="titulo" maxlength="50" placeholder="Título">
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="description">Descrição:</label>
+              <input class="modal-form-input" id="description" type="text" name="descricao" placeholder="Descrição">
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="img-url">URL da capa do livro:</label>
+              <input class="modal-form-input" id="img-url" type="url" name="url_img" placeholder="URL da capa do livro">
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="price">Preço:</label>
+              <input class="modal-form-input" id="price" type="number" name="preco" min="1" placeholder="Preço">
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="pages">Páginas:</label>
+              <input class="modal-form-input" id="pages" type="number" name="paginas" min="1" placeholder="Páginas">
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="pub-year">Ano de Publicação:</label>
+              <input class="modal-form-input" id="pub-year" type="number" name="ano_publicacao" placeholder="Ano de Publicação">
+            </fieldset>
+  
+            <button class="btn -full" type="submit">
+              Atualizar livro
+            </button>
+          </form>
+  
+          <form class="modal-form hidden" id="modal-form-add">
+            <fieldset>
+              <label class="visually-hidden" for="ISBN">ISBN:</label>
+              <input class="modal-form-input" id="ISBN" type="text" name="ISBN" maxlength="13" placeholder="ISBN" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="title">Título:</label>
+              <input class="modal-form-input" id="title" type="text" name="titulo" maxlength="50" placeholder="Título" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="description">Descrição:</label>
+              <input class="modal-form-input" id="description" type="text" name="descricao" placeholder="Descrição" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="img-url">URL da capa do livro:</label>
+              <input class="modal-form-input" id="img-url" type="url" name="url_img" placeholder="URL da capa do livro" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="price">Preço:</label>
+              <input class="modal-form-input" id="price" type="number" name="preco" min="1" placeholder="Preço" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="pages">Páginas:</label>
+              <input class="modal-form-input" id="pages" type="number" name="paginas" min="1" placeholder="Páginas" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="pub-year">Ano de Publicação:</label>
+              <input class="modal-form-input" id="pub-year" type="number" name="ano_publicacao" placeholder="Ano de Publicação" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="pub-comp-id">ID da Editora:</label>
+              <input class="modal-form-input" id="pub-comp-id" type="number" name="id_editora" placeholder="ID da Editora" required>
+            </fieldset>
+  
+            <fieldset>
+              <label class="visually-hidden" for="author-id">ID do Autor:</label>
+              <input class="modal-form-input" id="author-id" type="number" name="id_autor" placeholder="ID do Autor" required>
+            </fieldset>
+  
+            <button class="btn -full" type="submit">
+              Adicionar livro
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="title">📚 Livraria Virtual</h1>
+    <div class="center">
+      <button class="btn" id="add-book">
+        <span class="fas fa-plus"></span> Adicionar livro
+      </button>
+    </div>
+    <!-- Flash messages, in case of fail or success on deleting a book. -->
+    <p class="message" id="message"></p>
+
+    <!-- Books goes here. -->
+    <div class="books" id="books">
+    </div>
+  </body>
+</html>
